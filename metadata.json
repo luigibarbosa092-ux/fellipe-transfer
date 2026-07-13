@@ -1,0 +1,6 @@
+{
+  "name": "Fellipe Transfer",
+  "description": "Site institucional premium para Fellipe Transfer – Transporte e Turismo. Transporte executivo e passeios de São Luís para Santo Amaro e Barreirinhas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

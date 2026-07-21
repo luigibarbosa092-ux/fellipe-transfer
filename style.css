@@ -1113,6 +1113,13 @@ img {
   gap: 52px;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .vehicle-cards-grid {
+    gap: 60px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1156,14 +1163,25 @@ img {
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  aspect-ratio: 16 / 9;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .vehicle-img-main {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
+}
+
+@media (max-width: 767px) {
+  .vehicle-image-card {
+    min-height: 260px;
+  }
 }
 
 .vehicle-card-badge {

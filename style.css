@@ -346,6 +346,7 @@ img {
 #main-header.scrolled {
   height: 75px;
   background-color: rgba(7, 11, 19, 0.9);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -513,7 +514,8 @@ img {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: 100%;
     max-width: 320px;
     height: 100vh;
@@ -529,7 +531,7 @@ img {
   }
   
   .nav-links.active {
-    right: 0;
+    transform: translateX(0);
   }
   
   .nav-link {
@@ -850,6 +852,7 @@ img {
   top: 20px;
   left: 20px;
   background-color: rgba(7, 11, 19, 0.85);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   color: var(--color-gold);
   font-family: var(--font-headings);
@@ -1000,6 +1003,7 @@ img {
   bottom: 16px;
   left: 16px;
   background-color: rgba(7, 11, 19, 0.75);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   color: var(--color-text-light);
   font-family: var(--font-headings);
@@ -1719,4 +1723,228 @@ img {
 
 .btn-cta:hover {
   transform: scale(1.03) translateY(-3px);
+}
+
+/* --- MOBILE RESPONSIVE POLISH (NO DESKTOP IMPACT) --- */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .section-padding {
+    padding: 64px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    line-height: 1.28;
+    margin-bottom: 14px;
+  }
+
+  .section-description {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .subtitle-premium {
+    font-size: 0.78rem;
+    letter-spacing: 2.4px;
+  }
+
+  .hero-section {
+    min-height: 100svh;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.45rem);
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 13px 20px;
+    line-height: 1.3;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .card-diferencial,
+  .serv-info,
+  .dest-content,
+  .testimonial-card,
+  .accordion-trigger,
+  .accordion-inner {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .card-diferencial {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .serv-img-wrapper {
+    height: 210px;
+  }
+
+  .dest-img-container {
+    height: 220px;
+  }
+
+  .lencois-showcase-wrapper {
+    gap: 40px;
+  }
+
+  .gallery-mosaic {
+    gap: 12px;
+  }
+
+  .gallery-overlay-tag {
+    left: 12px;
+    bottom: 12px;
+  }
+
+  /* Frota: alinhamento premium e simetria total no mobile */
+  .vehicle-cards-grid {
+    gap: 40px;
+  }
+
+  .vehicle-exec-card {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .vehicle-image-card {
+    width: 100%;
+    height: clamp(220px, 58vw, 280px);
+    aspect-ratio: auto;
+    min-height: 220px;
+    margin: 0;
+  }
+
+  .vehicle-img-main {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    padding: 10px;
+  }
+
+  .vehicle-details-side {
+    padding-top: 0;
+    gap: 12px;
+  }
+
+  .vehicle-section-title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    margin-bottom: 0;
+  }
+
+  .vehicle-section-desc {
+    font-size: 0.97rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .timeline-grid {
+    gap: 30px;
+  }
+
+  .step-content {
+    padding: 0 4px;
+  }
+
+  .testimonial-card {
+    width: min(86vw, 380px);
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .marquee-track {
+    gap: 18px;
+  }
+
+  .accordion-trigger {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.45;
+    align-items: flex-start;
+  }
+
+  .cta-final-section {
+    padding: 78px 0;
+  }
+
+  .cta-title {
+    font-size: 1.95rem;
+    line-height: 1.26;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .footer-section {
+    padding: 64px 0 0 0;
+  }
+
+  .footer-grid {
+    gap: 36px;
+    margin-bottom: 44px;
+  }
+
+  /* Segurança contra overflow horizontal em elementos de texto longos */
+  h1, h2, h3, p, a, span, li {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-badge {
+    letter-spacing: 2.2px;
+    font-size: 0.68rem;
+    padding: 6px 12px;
+  }
+
+  .vehicle-image-card {
+    height: clamp(210px, 62vw, 250px);
+    min-height: 210px;
+  }
+
+  .scroll-reveal.fade-left-anim,
+  .scroll-reveal.fade-right-anim {
+    transform: translateY(28px);
+  }
+
+  .vehicle-img-main {
+    padding: 8px;
+  }
+
+  .testimonial-card {
+    width: 88vw;
+  }
 }
